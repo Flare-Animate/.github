@@ -1,5 +1,7 @@
 ## Flare
 
+# HELP WANTED
+
 # Project Overview: 
 Flare is a fork of OpenToonz, tuned to recapture the intuitive feel and capabilities of Adobe Flash/Animate. We're building an accessible tool that is developed by the community.
 
