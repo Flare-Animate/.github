@@ -1,96 +1,89 @@
-**English** | [Deutsch](docs/translations/README.de.md) | [Español](docs/translations/README.es.md) | [Français](docs/translations/README.fr.md) | [Português (Brasil)](docs/translations/README.pt-BR.md) | [日本語](docs/translations/README.ja.md) | [한국어](docs/translations/README.ko.md) | [简体中文](docs/translations/README.zh-CN.md)
-
 <p align="center">
-  <img src="github.com/flare-animate/flare/assets/BannerNew.png" width="969" height="261" alt="The Flare Banner">
+  <img src="https://raw.githubusercontent.com/Flare-Animate/Flare/main/assets/BannerNew.png" width="969" height="261" alt="Flare Banner">
 </p>
 
-# Flare
+# Flare-Animate
 
-[![CI](https://img.shields.io/github/actions/workflow/status/Flare-Animate/Flare/ci.yml?branch=main&label=CI)](https://github.com/Flare-Animate/Flare/actions/workflows/ci.yml)
-[![License: BSD 3-Clause](https://img.shields.io/badge/license-BSD%203--Clause-blue)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.com/invite/JpeScW8Awa)
+**Free, open-source tools for 2D animation — built for artists who need continuity with Adobe Animate, Flash, and related workflows.**
 
-A free, open-source animation tool in the spirit of Adobe Animate, written in Rust. Built for Windows, macOS and Linux.
+[Website](https://flare-animate.github.io/website/) · [Discord](https://discord.com/invite/JpeScW8Awa) · [Discussions](https://github.com/orgs/Flare-Animate/discussions) · [Main Repository](https://github.com/Flare-Animate/Flare)
 
-> **Early alpha.** Expect bugs and incomplete Flash/Animate import fidelity. Back up your work.
+---
 
-<!-- A screenshot of the editor goes here: assets/repository/flare-app.png -->
+## Who we are
 
-### Features
+Flare-Animate is the organization behind **Flare** (also referred to as FlareCraft), a free and open-source animation suite written primarily in Rust.  
 
-- Draw with the tools Animate has, plus an extended library of tools such as Ruler (measures distance and angle) and Mirror. 
-- Lay out frames and layers on a timeline, with folders, masks, motion guides, motion and shape tweens with Ease, onion skin and a camera layer.
-- Symbols (Graphic, Movie Clip and Button) in a library, placed as instances on the stage.
-- Play the animation with sound, and Test Movie runs the published SWF in Ruffle.
-- Open and save `.flare` projects. Import and export Animate's XFL and .fla, and open Flash movies (`.swf`) as editable projects
-- Export PNG, GIF and MP4, and publish a SWF or an HTML5 Canvas page.
-- A command line interface (`flare`) to create, edit, export and publish projects from scripts.
+Our goal is simple: give animators and artists a modern, independent tool that respects their existing project files and workflows instead of locking them into a single vendor’s product roadmap.
 
-### Downloads
+We maintain the core Flare editor, related experiments, documentation, and community infrastructure.
 
-There will be downloads for Windows, macOS and Linux, but there are none yet. We will add them here once packaging is done. Until then, build from source (below).
+---
 
-### Build and run
+## The main project: Flare
 
-Rust is pinned in `rust-toolchain.toml`. Ruffle is a git submodule, so clone with submodules:
+**Flare** is an early-alpha animation editor designed to make the transition from Adobe Animate, Macromedia/Adobe Flash, and Moho as smooth as possible.
 
-    git clone --recurse-submodules https://github.com/Flare-Animate/Flare.git
-    cd Flare
-    cargo run --release -p flare-desktop
+- Familiar timeline, library, symbols (Graphic / Movie Clip / Button), onion skin, motion & shape tweens, camera layer, and drawing tools.
+- Native support for opening and working with `.fla`, `.xfl`, `.swf`, and related formats as editable projects.
+- Export to PNG, GIF, MP4, SWF, HTML5 Canvas, and more.
+- Desktop apps for Windows, macOS, and Linux, plus a live browser build and a command-line interface.
+- Actively rewritten in Rust (building on foundations from OpenToonz, Tahoma2D, AnimationCraft, and Next2Flash).
 
-On Linux install the libraries listed in [CONTRIBUTING.md](CONTRIBUTING.md).
+> **Early alpha.** Expect bugs and incomplete import fidelity. Always back up your work.
 
-### Command line
+### Quick links for Flare
 
-    flare new project.flare --width 1280 --height 720
-    flare draw-rect project.flare --rect 100 100 300 200 --color FF6600
-    flare export project.flare frame.png
-    flare export project.flare loop.gif --format gif
-    flare publish-html5 project.flare page.html
-    flare --help
+| Resource | Link |
+|----------|------|
+| Source & Issues | [github.com/Flare-Animate/Flare](https://github.com/Flare-Animate/Flare) |
+| Nightly builds | [Releases](https://github.com/Flare-Animate/Flare/releases) |
+| Web version | [flare-animate.github.io/Flare](https://flare-animate.github.io/Flare/) |
+| Documentation | [docs/](https://github.com/Flare-Animate/Flare/tree/main/docs) |
+| Build instructions | [docs/BUILDING.md](https://github.com/Flare-Animate/Flare/blob/main/docs/BUILDING.md) |
+| Roadmap | [docs/ROADMAP.md](https://github.com/Flare-Animate/Flare/blob/main/docs/ROADMAP.md) |
 
-### Why Flare exists
+---
 
-Adobe [announced](https://community.adobe.com/announcements-539/adobe-animate-end-of-life-and-support-timeline-1548220) the end of life of Animate and later [reversed course](https://community.adobe.com/announcements-539/update-on-the-status-of-adobe-animate-1548459). Though they reversed course, this shows just how volatile the animation industry is, and displays how much of a monopoly certain companies have on it. Animators were thrown into legitimate panic. People's careers should not depend on one company's decision to keep selling a product. 
+## Why Flare exists
 
-Flare began as a playground for making animation easier to learn, was later open-sourced, and grew from there.
+Adobe [announced](https://community.adobe.com/announcements-539/adobe-animate-end-of-life-and-support-timeline-1548220) the end of life of Animate and later [reversed course](https://community.adobe.com/announcements-539/update-on-the-status-of-adobe-animate-1548459).  
 
-### Roadmap
+The reversal does not change the underlying problem: the animation industry remains heavily dependent on a small number of commercial tools. Careers and production pipelines should not hinge on one company’s decision to continue (or discontinue) a product.
 
-The next things, most important first. Most of it is shown dimmed in the interface. [docs/ROADMAP.md](docs/ROADMAP.md) repeats this list and goes on to everything of lower priority.
+Flare started as a personal experiment in making animation easier to learn. It was open-sourced and has grown into a community effort focused on continuity, independence, and practical tools that artists can actually use.
 
-- Merge drawing: Flash's planar-map shapes, where overlapping shapes cut and merge each other (today shapes are separate objects)
-- Drawing quality: brush dynamics, and tracing a bitmap into vector shapes
-- SWF that keeps more of the document: buttons with their states, shape tweens as morphs, masks of several shapes and sounds inside symbols
-- A Motion Editor: per-property graphs and custom ease curves for tweens
-- Importing artwork from SVG and Photoshop files
-- Bones and inverse kinematics (the Bone and Bind tools)
-- Editable keyboard shortcuts
+---
 
-Also planned, at lower priority: ActionScript and a script editor (ActionScript in an imported file is kept as data and never run), shape hints and more than one scene, the rest of Animate's tools, custom themes, a fully rearrangeable toolbar and a released web build.
+## Other repositories
 
-### Documentation
+| Repository | Description |
+|------------|-------------|
+| [Flare](https://github.com/Flare-Animate/Flare) | The main animation suite (Rust rewrite + archived C++ base) |
+| [website](https://github.com/Flare-Animate/website) | Project website |
+| [Compositor](https://github.com/Flare-Animate/Compositor) | Experimental tool for improving linework and colour on flat cartoon/anime images |
+| [nflare](https://github.com/Flare-Animate/nflare) | NanoFL-related experiment |
+| [Flare-RustBase](https://github.com/Flare-Animate/Flare-RustBase) | Archived foundation for the Rust rewrite (formerly AnimationCraft) |
 
-[docs/README.md](docs/README.md) explains how Flare is built. 
+---
 
-Contributors should look at [CONTRIBUTING.md](CONTRIBUTING.md), [AGENTS.md](AGENTS.md), [SECURITY.md](SECURITY.md) and [CHANGELOG.md](CHANGELOG.md).
+## Community & contributing
 
-### Community
+- **Discord** — [Join the server](https://discord.com/invite/JpeScW8Awa) for discussion, help, and development chat.
+- **GitHub Discussions** — [org-level discussions](https://github.com/orgs/Flare-Animate/discussions)
+- **Issues** — File bugs and feature requests on the [Flare repository](https://github.com/Flare-Animate/Flare/issues)
 
-[Discord](https://discord.com/invite/JpeScW8Awa) · [Website](https://flare-animate.github.io/website/) · [Discussions](https://github.com/orgs/Flare-Animate/discussions) · [Issues](https://github.com/Flare-Animate/Flare/issues)
+Contributors are welcome. Please read the [CONTRIBUTING.md](https://github.com/Flare-Animate/Flare/blob/main/CONTRIBUTING.md), [AGENTS.md](https://github.com/Flare-Animate/Flare/blob/main/AGENTS.md), and [SECURITY.md](https://github.com/Flare-Animate/Flare/blob/main/SECURITY.md) in the main repository before opening pull requests.
 
-### License
+---
 
-BSD 3-Clause. See [LICENSE](LICENSE).
+## License
 
-## What is Flare?
+The core Flare project is released under the **BSD 3-Clause License**.  
+Third-party components retain their own licenses. See the [LICENSE](https://github.com/Flare-Animate/Flare/blob/main/LICENSE) file in the main repository for details.
 
-Flare is a (Work In Progress) Animation Suite, designed to make the transition from software like Adobe Animate, Adobe/Macromedia Flash and Moho easier for Artists and Animators. We implement support for all formats used by those tools, and redesign the UI to have a more simplistic and familiar layout.
+---
 
-It is being rewritten in Rust, based predominantly on OpenToonz and Tahoma2D, with many features merged in from AnimationCraft and Next2Flash.
-
-### Format support
-
-- Flash/Animate: .fla, .xfl, .swf, .swc, .flv/.f4v, .as, legacy binary .fla, AIR/ZXP/MXP packages
-- Moho project reading: structure, rig and asset manifest (no rendering yet)
-- OpenToonz formats: .tnz, .tlv, .pli, .tzu (planned)
+<p align="center">
+  <em>Animation tools, built in the open.</em>
+</p>
